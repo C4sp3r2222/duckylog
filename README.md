@@ -53,12 +53,12 @@ powershell -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -Command "Star
 # DETENCION DE SCRIPT:
 # ---------------------------------------------------------
 
-# Ejecutar en Powershell:
+-Ejecutar en Powershell:
 Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like '*script.ps1*' } | Select-Object ProcessId, CommandLine
 
-# (Veremos un numero de proceso asociado Ej: 1234 )
+-(Veremos un numero de proceso asociado Ej: 1234 )
 
-# Para detenerlo, ejecutar en powershell:
+-Para detenerlo, ejecutar en powershell:
 Stop-Process -Id 1234 -Force
 
 # (Detenemos el proceso)
